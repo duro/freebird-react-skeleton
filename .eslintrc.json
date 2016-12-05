@@ -1,0 +1,9 @@
+{
+  "extends": ["react-app", "walmart/configurations/es6-react"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "never"],
+    "curly": ["error", "multi-line"],
+    "indent": ["error", 2, { "SwitchCase": 1 }]
+  }
+}

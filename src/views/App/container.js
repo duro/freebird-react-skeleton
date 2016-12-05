@@ -1,6 +1,6 @@
-import { connect } from 'react-redux';
-import { windowResized } from '../../store/app';
-import AppComponent from './component';
+import { connect } from 'react-redux'
+import { windowResized } from '../../store/app'
+import AppComponent from './component'
 
 const AppContainer = connect(
   // Map state to props
@@ -11,6 +11,6 @@ const AppContainer = connect(
   {
     windowResized
   }
-)(AppComponent);
+)(AppComponent)
 
-export default AppContainer;
+export default AppContainer

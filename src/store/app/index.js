@@ -1,15 +1,15 @@
-import Immutable from 'immutable';
+import Immutable from 'immutable'
 
 /**
  * Private: Initial State
  */
 
-const initialState = new Immutable.fromJS({
+const initialState = Immutable.fromJS({
   window: {
     width: 0,
     height: 0
   }
-});
+})
 
 /**
  * Public: Action Types
@@ -17,13 +17,13 @@ const initialState = new Immutable.fromJS({
 
 export const actionTypes = {
   WINDOW_RESIZE: 'FB/app/WINDOW_RESIZE'
-};
+}
 
 /**
  * Public: Action Creators
  */
 
-export function windowResized(width, height) {
+export const windowResized = (width, height) => {
   return {
     type: actionTypes.WINDOW_RESIZE,
     payload: { width, height }
@@ -37,11 +37,14 @@ export function windowResized(width, height) {
 export default function reducer(state = initialState, action = {}) {
   switch (action.type) {
 
-    case actionTypes.WINDOW_RESIZE:
-      const { width, height } = action.payload;
+    case actionTypes.WINDOW_RESIZE: {
+      const { width, height } = action.payload
       return state.mergeIn(['window'], { width, height })
+    }
 
-    default:
-      return state;
+    default: {
+      return state
+    }
+
   }
 }

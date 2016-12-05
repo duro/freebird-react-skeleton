@@ -1,10 +1,10 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { BrowserRouter } from 'react-router';
-import store from './store';
-import AppContainer from './views/App/container';
-import './index.scss';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { BrowserRouter } from 'react-router'
+import store from './store'
+import AppContainer from './views/App/container'
+import './index.scss'
 
 ReactDOM.render(
   <Provider store={store}>
@@ -13,4 +13,4 @@ ReactDOM.render(
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')
-);
+)

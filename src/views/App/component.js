@@ -1,10 +1,10 @@
-import React, { Component, PropTypes } from 'react';
-import IPT from 'react-immutable-proptypes';
-import { Match, Link } from 'react-router';
-import logo from './logo.svg';
-import Home from '../Home/container';
-import About from '../About/container';
-import './styles.scss';
+import React, { Component, PropTypes } from 'react'
+import IPT from 'react-immutable-proptypes'
+import { Match, Link } from 'react-router'
+import logo from './logo.svg'
+import Home from '../Home/container'
+import About from '../About/container'
+import './styles.scss'
 
 export default class App extends Component {
 
@@ -17,25 +17,25 @@ export default class App extends Component {
   }
 
   constructor(props) {
-    super(props);
-    this.handleResize = this.onResize.bind(this);
+    super(props)
+    this.handleResize = this.onResize.bind(this)
   }
 
   componentDidMount() {
-    window.addEventListener('resize', this.handleResize);
-    this.handleResize();
+    window.addEventListener('resize', this.handleResize)
+    this.handleResize()
   }
 
   componentWillUnmount() {
-    window.removeEventListener('resize', this.handleResize);
+    window.removeEventListener('resize', this.handleResize)
   }
 
-  onResize(event) {
+  onResize(/* event */) {
     this.props.windowResized(window.innerWidth, window.innerHeight)
   }
 
   render() {
-    const { width, height } = this.props.windowSize.toJS();
+    const { width, height } = this.props.windowSize.toJS()
 
     return (
       <div className="App">
@@ -57,6 +57,6 @@ export default class App extends Component {
           <Match pattern="/about" component={About} />
         </div>
       </div>
-    );
+    )
   }
 }
