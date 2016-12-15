@@ -4,6 +4,8 @@
     "quotes": ["error", "single"],
     "semi": ["error", "never"],
     "curly": ["error", "multi-line"],
-    "indent": ["error", 2, { "SwitchCase": 1 }]
+    "indent": ["error", 2, { "SwitchCase": 1 }],
+    "new-cap": 0,
+    "no-console": 0
   }
 }
