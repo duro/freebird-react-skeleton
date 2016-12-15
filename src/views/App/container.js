@@ -1,11 +1,12 @@
 import { connect } from 'react-redux'
-import { windowResized } from '../../store/app'
+import { windowResized } from '../../store/app/actions'
+import { windowSizeSelector } from '../../store/app/selectors'
 import AppComponent from './component'
 
 const AppContainer = connect(
   // Map state to props
   (state) => ({
-    windowSize: state.app.get('window')
+    windowSize: windowSizeSelector(state)
   }),
   // Map actions to dispatch and props
   {

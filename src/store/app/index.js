@@ -1,4 +1,5 @@
 import Immutable from 'immutable'
+import * as actionTypes from './constants'
 
 /**
  * Private: Initial State
@@ -10,25 +11,6 @@ const initialState = Immutable.fromJS({
     height: 0
   }
 })
-
-/**
- * Public: Action Types
- */
-
-export const actionTypes = {
-  WINDOW_RESIZE: 'FB/app/WINDOW_RESIZE'
-}
-
-/**
- * Public: Action Creators
- */
-
-export const windowResized = (width, height) => {
-  return {
-    type: actionTypes.WINDOW_RESIZE,
-    payload: { width, height }
-  }
-}
 
 /**
  * Public: Reducer
