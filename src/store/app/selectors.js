@@ -1,4 +1,3 @@
-
 /**
  * Get the window size
  * @param  {object} state The global redux state

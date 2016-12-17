@@ -1,5 +1,4 @@
 import React, { Component, PropTypes } from 'react'
-import IPT from 'react-immutable-proptypes'
 import { Match, Link } from 'react-router'
 import logo from './logo.svg'
 import Home from '../Home/container'
@@ -10,10 +9,8 @@ export default class App extends Component {
 
   static propTypes = {
     windowResized: PropTypes.func.isRequired,
-    windowSize: IPT.mapContains({
-      width: PropTypes.number.isRequired,
-      height: PropTypes.number.isRequired
-    }).isRequired
+    windowWidth: PropTypes.number.isRequired,
+    windowHeight: PropTypes.number.isRequired
   }
 
   constructor(props) {
@@ -35,7 +32,7 @@ export default class App extends Component {
   }
 
   render() {
-    const { width, height } = this.props.windowSize.toJS()
+    const { windowWidth, windowHeight } = this.props
 
     return (
       <div className="App">
@@ -44,7 +41,7 @@ export default class App extends Component {
           <h2>Welcome to React</h2>
         </div>
         <p className="App-windowInfo">
-          Window Width: { width } / Window Height: { height }
+          Window Width: { windowWidth } / Window Height: { windowHeight }
         </p>
         <nav className="App-mainNav">
           <ul>

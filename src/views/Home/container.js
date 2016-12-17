@@ -1,7 +1,16 @@
-import React from 'react'
+import { connect } from 'react-redux'
+import HomeComponent from './component'
+import { fetchThings } from '../../store/home/duck'
 
-export default () => (
-  <div>
-    <h1>Home</h1>
-  </div>
-)
+const HomeContainer = connect(
+  // Map state to props
+  (state) => ({
+    phase: state.home.get('phase'),
+    things: state.home.get('things'),
+    error: state.home.get('error')
+  }),
+  // Map actions to dispatch and props
+  { fetchThings }
+)(HomeComponent)
+
+export default HomeContainer
