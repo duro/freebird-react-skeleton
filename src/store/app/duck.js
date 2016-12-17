@@ -4,7 +4,7 @@ import { Record } from 'immutable'
  * Public: Action Types
  */
 
-export const WINDOW_RESIZE = '$$FREEB/app/WINDOW_RESIZE'
+export const WINDOW_RESIZE = 'freebird/app/WINDOW_RESIZE'
 
 /**
  * Private: Initial State
