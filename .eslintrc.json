@@ -6,6 +6,7 @@
     "curly": ["error", "multi-line"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "new-cap": 0,
-    "no-console": 0
+    "no-console": 0,
+    "no-debugger": 1
   }
 }
