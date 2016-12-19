@@ -10,8 +10,8 @@ import { INIT, LOADING, SUCCESS, ERROR } from '../../constants/phase'
  */
 
 export const FETCH_THINGS = 'freebird/home/FETCH_THINGS'
-export const FETCH_THINGS_FULFILLED = 'freebird/home/FETCH_THINGS_FULFILLED'
-export const FETCH_THINGS_REJECTED = 'freebird/home/FETCH_THINGS_REJECTED'
+export const FETCH_THINGS_SUCCESS = 'freebird/home/FETCH_THINGS_SUCCESS'
+export const FETCH_THINGS_ERROR = 'freebird/home/FETCH_THINGS_ERROR'
 
 /**
  * Private: Initial State
@@ -40,12 +40,12 @@ export default function reducer(state = new InitialState(), action = {}) {
     case FETCH_THINGS:
       return state.set('phase', LOADING)
 
-    case FETCH_THINGS_FULFILLED:
+    case FETCH_THINGS_SUCCESS:
       return state
         .set('things', action.payload.things)
         .set('phase', SUCCESS)
 
-    case FETCH_THINGS_REJECTED:
+    case FETCH_THINGS_ERROR:
       return state
         .set('error', action.payload.error)
         .set('phase', ERROR)
@@ -74,11 +74,11 @@ const fetchThingsEpic = (action$) =>
     .ofType(FETCH_THINGS)
     .mergeMap(api.fetchThings)
     .map((things) => ({
-      type: FETCH_THINGS_FULFILLED,
+      type: FETCH_THINGS_SUCCESS,
       payload: { things }
     }))
     .catch((error) => Rx.Observable.of({
-      type: FETCH_THINGS_REJECTED,
+      type: FETCH_THINGS_ERROR,
       payload: { error }
     }))
 
