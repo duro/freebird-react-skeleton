@@ -1,6 +1,8 @@
 import { connect } from 'react-redux'
-import HomeComponent from './component'
+
 import { fetchThings } from '../../store/home/duck'
+
+import HomeComponent from './component'
 
 const HomeContainer = connect(
   // Map state to props

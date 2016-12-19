@@ -1,5 +1,6 @@
 import fetch from 'isomorphic-fetch'
 import { List } from 'immutable'
+
 import Thing from './thing-model'
 
 const HOSTNAME = process.env.REACT_APP_FREEBIRD_API_HOSTNAME

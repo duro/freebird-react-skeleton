@@ -1,8 +1,10 @@
 import React, { Component, PropTypes } from 'react'
 import { Match, Link } from 'react-router'
-import logo from './logo.svg'
+
 import Home from '../Home/container'
 import About from '../About/container'
+
+import logo from './logo.svg'
 import './styles.scss'
 
 export default class App extends Component {

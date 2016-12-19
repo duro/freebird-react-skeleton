@@ -1,9 +1,10 @@
 import Rx from 'rxjs/Rx'
 import { Record, List } from 'immutable'
 import { combineEpics } from 'redux-observable'
-import * as api from './api'
 
 import { INIT, LOADING, SUCCESS, ERROR } from '../../constants/phase'
+
+import * as api from './api'
 
 /**
  * Public: Action Types

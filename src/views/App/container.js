@@ -1,5 +1,7 @@
 import { connect } from 'react-redux'
+
 import { windowResized } from '../../store/app/duck'
+
 import AppComponent from './component'
 
 const AppContainer = connect(
