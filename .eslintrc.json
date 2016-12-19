@@ -2,11 +2,17 @@
   "extends": ["react-app", "walmart/configurations/es6-react"],
   "rules": {
     "quotes": ["error", "single"],
+    "import/default": "off",
+    "import/newline-after-import": "error",
+    "import/no-duplicates": "error",
+    "import/order": ["error", {"newlines-between": "always"}],
     "semi": ["error", "never"],
     "curly": ["error", "multi-line"],
     "indent": ["error", 2, { "SwitchCase": 1 }],
     "new-cap": 0,
     "no-console": 0,
-    "no-debugger": 1
+    "no-debugger": 1,
+    "object-curly-spacing": ["error", "always"],
+    "valid-jsdoc": ["error"]
   }
 }
