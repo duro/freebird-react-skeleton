@@ -9,10 +9,10 @@ import reducer, {
   FETCH_THINGS,
   FETCH_THINGS_SUCCESS,
   FETCH_THINGS_ERROR
-} from './duck'
-import { HTTP_200 } from '../../constants/http'
-import * as phases from '../../constants/phase'
-import Thing from './thing-model'
+} from '../duck'
+import { HTTP_200 } from '../../../constants/http'
+import * as phases from '../../../constants/phase'
+import Thing from '../thing-model'
 
 const HOSTNAME = process.env.REACT_APP_FREEBIRD_API_HOSTNAME
 

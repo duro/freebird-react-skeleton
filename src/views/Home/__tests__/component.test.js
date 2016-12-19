@@ -1,10 +1,10 @@
 import React from 'react'
-import Home from './component'
 import { shallow } from 'enzyme'
 import { List } from 'immutable'
-import Thing from '../../store/home/thing-model'
 
-import { INIT, SUCCESS, ERROR } from '../../constants/phase'
+import Home from '../component'
+import Thing from '../../../store/home/thing-model'
+import { INIT, SUCCESS, ERROR } from '../../../constants/phase'
 
 const listOfThings = List(
   [ {id: 1, title: 'Thing #1', description: 'This thing is super cool'},

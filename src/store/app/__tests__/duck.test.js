@@ -1,6 +1,6 @@
 import { Record } from 'immutable'
 
-import reducer, { windowResized, WINDOW_RESIZE } from './duck'
+import reducer, { windowResized, WINDOW_RESIZE } from '../duck'
 
 describe('app actions', () => {
   it('creates an action to store Window size', () => {

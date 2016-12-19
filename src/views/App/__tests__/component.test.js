@@ -1,6 +1,7 @@
 import React from 'react'
-import App from './component'
 import { shallow } from 'enzyme'
+
+import App from '../component'
 
 const windowWidth = 555
 const windowHeight = 666

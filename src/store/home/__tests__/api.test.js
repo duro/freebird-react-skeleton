@@ -1,9 +1,9 @@
 import nock from 'nock'
-
-import * as api from './api'
 import { List } from 'immutable'
-import Thing from './thing-model'
-import { HTTP_200 } from '../../constants/http'
+
+import * as api from '../api'
+import Thing from '../thing-model'
+import { HTTP_200 } from '../../../constants/http'
 
 const HOSTNAME = process.env.REACT_APP_FREEBIRD_API_HOSTNAME
 
