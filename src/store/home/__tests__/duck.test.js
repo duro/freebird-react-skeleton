@@ -44,9 +44,9 @@ describe('home reducer', () => {
 
   it('handles a fetch things success action', () => {
     const things = List([
-      new Thing({id: 1, title: 'The Title', description: 'A description'}),
-      new Thing({id: 2, title: 'Another Title', description: 'Another description'}),
-      new Thing({id: 3, title: 'One More Title', description: 'One More description'})
+      new Thing({ id: 1, title: 'The Title', description: 'A description' }),
+      new Thing({ id: 2, title: 'Another Title', description: 'Another description' }),
+      new Thing({ id: 3, title: 'One More Title', description: 'One More description' })
     ])
     const fetchThingsSuccessAction = {
       type: FETCH_THINGS_SUCCESS,
@@ -94,9 +94,9 @@ describe('home epics', () => {
     // SEE: https://github.com/redux-observable/redux-observable/issues/144
 
     const expectedThings = [
-      {'id': 1, 'title': 'Thing #1', 'description': 'This thing is super cool'},
-      {'id': 2, 'title': 'Thing #2', 'description': 'This thing is super super cool'},
-      {'id': 3, 'title': 'Thing #3', 'description': 'This thing is super mega cool'}
+      { 'id': 1, 'title': 'Thing #1', 'description': 'This thing is super cool' },
+      { 'id': 2, 'title': 'Thing #2', 'description': 'This thing is super super cool' },
+      { 'id': 3, 'title': 'Thing #3', 'description': 'This thing is super mega cool' }
     ]
 
     nock(`http://${HOSTNAME}`)
@@ -107,7 +107,7 @@ describe('home epics', () => {
 
     expect().toEqual([
       { type: FETCH_THINGS },
-      { type: FETCH_THINGS_SUCCESS, payload: expectedThings}
+      { type: FETCH_THINGS_SUCCESS, payload: expectedThings }
     ])
   })
 })

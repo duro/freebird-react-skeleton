@@ -7,9 +7,9 @@ import Thing from '../../../store/home/thing-model'
 import { INIT, SUCCESS, ERROR } from '../../../constants/phase'
 
 const listOfThings = List(
-  [ {id: 1, title: 'Thing #1', description: 'This thing is super cool'},
-    {id: 2, title: 'Thing #2', description: 'This thing is super super cool'},
-    {id: 3, title: 'Thing #3', description: 'This thing is super mega cool'} ]
+  [ { id: 1, title: 'Thing #1', description: 'This thing is super cool' },
+    { id: 2, title: 'Thing #2', description: 'This thing is super super cool' },
+    { id: 3, title: 'Thing #3', description: 'This thing is super mega cool' } ]
       .map((thing) => new Thing(thing))
 )
 
