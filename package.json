@@ -54,7 +54,9 @@
     "webpack": "1.13.2",
     "webpack-dev-server": "1.16.2",
     "webpack-manifest-plugin": "1.1.0",
-    "whatwg-fetch": "1.0.0"
+    "whatwg-fetch": "1.0.0",
+    "yeoman-generator": "^1.0.1",
+    "yo": "^1.8.5"
   },
   "dependencies": {
     "axios": "^0.15.3",
@@ -77,7 +79,11 @@
     "build": "node scripts/build.js",
     "test": "node scripts/test.js --env=jsdom",
     "test:ci": "CI=true node scripts/test.js --env=jsdom",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "generate:generator": "./node_modules/.bin/yo ./generator/generator",
+    "generate:component": "./node_modules/.bin/yo ./generator/component",
+    "generate:view": "./node_modules/.bin/yo ./generator/view",
+    "generate:duck": "./node_modules/.bin/yo ./generator/duck"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -93,7 +99,7 @@
       "<rootDir>/config/polyfills.js"
     ],
     "testPathIgnorePatterns": [
-      "<rootDir>/(build|scripts|docs|node_modules)/"
+      "<rootDir>/(build|scripts|generator|docs|node_modules)/"
     ],
     "testEnvironment": "node"
   },
