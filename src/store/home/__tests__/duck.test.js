@@ -1,20 +1,13 @@
-import nock from 'nock'
 import { Record, List } from 'immutable'
-import configureMockStore from 'redux-mock-store'
-import { createEpicMiddleware } from 'redux-observable'
 
 import reducer, {
   fetchThings,
-  homeEpic,
   FETCH_THINGS,
   FETCH_THINGS_SUCCESS,
   FETCH_THINGS_ERROR
 } from '../duck'
-import { HTTP_200 } from '../../../constants/http'
 import * as phases from '../../../constants/phase'
 import Thing from '../thing-model'
-
-const HOSTNAME = process.env.REACT_APP_FREEBIRD_API_HOSTNAME
 
 describe('home actions', () => {
   it('creates an action to fetch things', () => {
@@ -68,46 +61,5 @@ describe('home reducer', () => {
     expect(state.phase).toEqual(phases.ERROR)
     expect(state.things).toBeInstanceOf(List)
     expect(state.error).toEqual(error)
-  })
-})
-
-describe('home epics', () => {
-  let store
-
-  const epicMiddleware = createEpicMiddleware(homeEpic)
-  const mockStore = configureMockStore([epicMiddleware])
-
-  beforeEach(() => {
-    store = mockStore()
-  })
-
-  afterEach(() => {
-    nock.cleanAll()
-    epicMiddleware.replaceEpic(homeEpic)
-  })
-
-  it.skip('fetches things', () => {
-    // TODO: It would seem that Epics themselves cannot be tested right now
-    // since there is nowhere that returns a promise, which is what Jest
-    // expects to have returned from this function in order to know to wait for
-    // some async behavior to finish before it moves on to the next test
-    // SEE: https://github.com/redux-observable/redux-observable/issues/144
-
-    const expectedThings = [
-      { 'id': 1, 'title': 'Thing #1', 'description': 'This thing is super cool' },
-      { 'id': 2, 'title': 'Thing #2', 'description': 'This thing is super super cool' },
-      { 'id': 3, 'title': 'Thing #3', 'description': 'This thing is super mega cool' }
-    ]
-
-    nock(`http://${HOSTNAME}`)
-      .get('/things.json')
-      .reply(HTTP_200, expectedThings)
-
-    store.dispatch(fetchThings())
-
-    expect().toEqual([
-      { type: FETCH_THINGS },
-      { type: FETCH_THINGS_SUCCESS, payload: expectedThings }
-    ])
   })
 })
