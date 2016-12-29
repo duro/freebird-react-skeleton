@@ -5,7 +5,7 @@ import * as api from '../api'
 import Thing from '../thing-model'
 import { HTTP_200 } from '../../../constants/http'
 
-const HOSTNAME = process.env.REACT_APP_FREEBIRD_API_HOSTNAME
+const { API_HOSTNAME } = process.env
 
 describe('home API', () => {
 
@@ -20,7 +20,7 @@ describe('home API', () => {
       { 'id': 3, 'title': 'Thing #3', 'description': 'This thing is super mega cool' }
     ]
 
-    nock(`http://${HOSTNAME}`)
+    nock(`http://${API_HOSTNAME}`)
       .get('/things.json')
       .reply(HTTP_200, expectedThings)
 
